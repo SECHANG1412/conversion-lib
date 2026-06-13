@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversion Lib — 단위 변환기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header__badge">conversion-lib sample</div>
+        <h1 class="header__title">단위 변환기</h1>
+        <p class="header__desc">
+          길이, 무게, 넓이, 부피, 온도, 두께/평량, 속도, 압력을 실시간으로 변환합니다.
+        </p>
+      </header>
+
+      <main class="main">
+        <nav class="tabs" id="category-tabs" role="tablist" aria-label="변환 카테고리"></nav>
+
+        <section class="converter card">
+          <div class="converter__row">
+            <label class="field">
+              <span class="field__label">값</span>
+              <input
+                type="number"
+                id="input-value"
+                class="field__input field__input--large"
+                value="1"
+                step="any"
+                inputmode="decimal"
+              />
+            </label>
+          </div>
+
+          <div class="converter__grid">
+            <label class="field">
+              <span class="field__label">변환 전</span>
+              <select id="from-unit" class="field__select"></select>
+            </label>
+
+            <button type="button" id="swap-btn" class="swap-btn" title="단위 교환" aria-label="단위 교환">
+              ⇄
+            </button>
+
+            <label class="field">
+              <span class="field__label">변환 후</span>
+              <select id="to-unit" class="field__select"></select>
+            </label>
+          </div>
+
+          <div class="result" id="result-panel">
+            <span class="result__label">결과</span>
+            <output id="result-value" class="result__value" for="input-value from-unit to-unit">—</output>
+            <span id="result-formula" class="result__formula"></span>
+          </div>
+        </section>
+
+        <section class="quick card">
+          <h2 class="card__title">빠른 참고</h2>
+          <ul class="quick__list" id="quick-reference"></ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <code>conversion-lib</code> 라이브러리 샘플 앱
+      </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

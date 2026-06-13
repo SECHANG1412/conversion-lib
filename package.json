@@ -1,0 +1,22 @@
+{
+  "name": "conversion-lib",
+  "version": "1.0.0",
+  "description": "JavaScript library for converting length, weight, area, volume, temperature, thickness, speed, and pressure units",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "sample": "npx --yes serve sample -p 3000",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "unit-conversion",
+    "converter",
+    "length",
+    "weight",
+    "temperature"
+  ],
+  "license": "MIT"
+}
