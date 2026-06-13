@@ -17,6 +17,10 @@ describe('convertUnit', () => {
     assert.ok(Math.abs(convertUnit('area', 1, 'pyeong', 'm2') - 3.305785) < 1e-5);
   });
 
+  it('converts volume including doe', () => {
+    assert.ok(Math.abs(convertUnit('volume', 1, 'doe', 'l') - 1.8039) < 1e-6);
+  });
+
   it('converts temperature', () => {
     assert.equal(convertUnit('temperature', 0, 'c', 'f'), 32);
     assert.equal(convertUnit('temperature', 100, 'c', 'f'), 212);

@@ -22,6 +22,7 @@ const QUICK_PAIRS = {
   ],
   volume: [
     ['1', 'l', 'gallon'],
+    ['1', 'doe', 'l'],
     ['250', 'ml', 'cup'],
   ],
   temperature: [
