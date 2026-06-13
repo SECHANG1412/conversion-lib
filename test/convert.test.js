@@ -14,6 +14,7 @@ describe('convertUnit', () => {
   });
 
   it('converts area including pyeong', () => {
+    assert.ok(Math.abs(convertUnit('area', 1, '평', 'm2') - 3.305785) < 1e-5);
     assert.ok(Math.abs(convertUnit('area', 1, 'pyeong', 'm2') - 3.305785) < 1e-5);
   });
 

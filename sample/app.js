@@ -17,7 +17,7 @@ const QUICK_PAIRS = {
     ['1', 'oz', 'g'],
   ],
   area: [
-    ['1', 'pyeong', 'm2'],
+    ['1', '평', 'm2'],
     ['1', 'acre', 'ha'],
   ],
   volume: [

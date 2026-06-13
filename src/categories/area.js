@@ -9,7 +9,11 @@ export const areaUnits = {
   'yd2': 0.83612736,
   'acre': 4046.8564224,
   'ha': 10000,
-  'pyeong': 3.305785,
+  '평': 3.305785,
+};
+
+export const areaUnitAliases = {
+  pyeong: '평',
 };
 
 export const areaLabels = {
@@ -22,5 +26,5 @@ export const areaLabels = {
   'yd2': '제곱야드 (yd²)',
   'acre': '에이커 (acre)',
   'ha': '헥타르 (ha)',
-  'pyeong': '평 (pyeong)',
+  '평': '평',
 };
