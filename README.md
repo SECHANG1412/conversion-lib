@@ -35,8 +35,8 @@ getCategories();
 |---------|-----|----------|
 | 길이 | `length` | mm, cm, m, km, inch, ft, mile |
 | 무게 | `weight` | mg, g, kg, lb, oz |
-| 넓이 | `area` | m², ft², acre, ha, 평(pyeong) |
-| 부피 | `volume` | mL, L, cup, gallon |
+| 넓이 | `area` | m², ft², acre, ha, **평** |
+| 부피 | `volume` | mL, L, 되(doe), cup, gallon |
 | 온도 | `temperature` | °C, °F, K |
 | 두께/평량 | `thickness` | μm, mm, mil, pt, gsm |
 | 속도 | `speed` | m/s, km/h, mph |

@@ -1,7 +1,7 @@
 import { convert, getUnitKeys } from './utils/convert.js';
 import { lengthUnits, lengthLabels } from './categories/length.js';
 import { weightUnits, weightLabels } from './categories/weight.js';
-import { areaUnits, areaLabels } from './categories/area.js';
+import { areaUnits, areaLabels, areaUnitAliases } from './categories/area.js';
 import { volumeUnits, volumeLabels } from './categories/volume.js';
 import {
   temperatureToBase,
@@ -26,6 +26,7 @@ export const CATEGORIES = {
   area: {
     units: areaUnits,
     labels: areaLabels,
+    aliases: areaUnitAliases,
     name: '넓이',
   },
   volume: {
@@ -57,6 +58,16 @@ export const CATEGORIES = {
 };
 
 /**
+ * @param {string} category
+ * @param {string} unit
+ * @returns {string}
+ */
+function resolveUnit(category, unit) {
+  const config = CATEGORIES[category];
+  return config?.aliases?.[unit] ?? unit;
+}
+
+/**
  * Convert a numeric value between units in a given category.
  * @param {string} category - Category key (length, weight, area, etc.)
  * @param {number} value
@@ -69,6 +80,9 @@ export function convertUnit(category, value, fromUnit, toUnit) {
   if (!config) {
     throw new RangeError(`Unknown category: ${category}`);
   }
+
+  fromUnit = resolveUnit(category, fromUnit);
+  toUnit = resolveUnit(category, toUnit);
 
   if (category === 'temperature') {
     if (typeof value !== 'number' || Number.isNaN(value)) {
@@ -109,6 +123,7 @@ export function getUnitLabel(category, unit) {
   if (!config) {
     throw new RangeError(`Unknown category: ${category}`);
   }
+  unit = resolveUnit(category, unit);
   return config.labels[unit] ?? unit;
 }
 
